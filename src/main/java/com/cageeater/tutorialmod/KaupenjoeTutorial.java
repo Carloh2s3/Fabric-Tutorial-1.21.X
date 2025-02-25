@@ -1,5 +1,7 @@
 package com.cageeater.tutorialmod;
 
+import com.cageeater.tutorialmod.block.ModBlocks;
+import com.cageeater.tutorialmod.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -12,6 +14,7 @@ public class KaupenjoeTutorial implements ModInitializer {
 	//very important comment lol
 	@Override
 	public void onInitialize() {
-
+		ModItems.registerModItems();
+		ModBlocks.registerModBlocks();
 	}
 }
