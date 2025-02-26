@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Map;
 
 public class ChiselItem extends Item {
-    private static Map<Block, Block> CHISEL_MAP = new HashMap<Block, Block>();
+    private static Map<Block, Block> CHISEL_MAP = new HashMap<>();
 
     public static void addChiselAction(Block block1, Block block2) {
         if (!CHISEL_MAP.containsKey(block1)) {
@@ -43,6 +43,13 @@ public class ChiselItem extends Item {
         addChiselAction(Blocks.DEEPSLATE_TILES, Blocks.CHISELED_DEEPSLATE);
         addChiselAction(Blocks.SANDSTONE, Blocks.CHISELED_SANDSTONE);
         addChiselAction(Blocks.RED_SANDSTONE, Blocks.CHISELED_RED_SANDSTONE);
+        addChiselAction(Blocks.TUFF, Blocks.POLISHED_TUFF);
+        addChiselAction(Blocks.POLISHED_TUFF, Blocks.TUFF_BRICKS);
+        addChiselAction(Blocks.POLISHED_TUFF, Blocks.CHISELED_TUFF);
+        addChiselAction(Blocks.CHISELED_TUFF, Blocks.TUFF_BRICKS);
+        addChiselAction(Blocks.TUFF_BRICKS, Blocks.CHISELED_TUFF_BRICKS);
+        addChiselAction(Blocks.CUT_COPPER, Blocks.CHISELED_COPPER);
+        addChiselAction(Blocks.CHISELED_COPPER, Blocks.COPPER_GRATE);
     }
 
     public ChiselItem(Settings settings) {
