@@ -13,5 +13,10 @@
   "block.tutorialmod.pink_garnet_deepslate_ore": "Pink Garnet Deepslate Ore",
 
   "itemgroup.tutorialmod.pink_garnet_items": "Pink Garnet Items",
-  "itemgroup.tutorialmod.pink_garnet_blocks": "Pink Garnet Blocks"
+  "itemgroup.tutorialmod.pink_garnet_blocks": "Pink Garnet Blocks",
+
+  "tooltip.tutorialmod.magic_block": "This block is very §9MAGICAL§r!",
+  "tooltip.tutorialmod.chisel": "Press §eShift§r for more information.",
+  "tooltip.tutorialmod.chisel_shift": "This item chisels blocks into more elaborate variants.",
+  "tooltip.tutorialmod.cauliflower": "Yum, raw and earthy."
 }
