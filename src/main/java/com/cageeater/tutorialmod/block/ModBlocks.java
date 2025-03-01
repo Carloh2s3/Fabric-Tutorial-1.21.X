@@ -14,9 +14,6 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class ModBlocks {
 
     public static final Block PINK_GARNET_BLOCK = registerBlock("pink_garnet_block",
