@@ -14,6 +14,9 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ModBlocks {
 
     public static final Block PINK_GARNET_BLOCK = registerBlock("pink_garnet_block",
@@ -24,13 +27,15 @@ public class ModBlocks {
     public static final Block RAW_PINK_GARNET_BLOCK = registerBlock("raw_pink_garnet_block",
             new Block(AbstractBlock.Settings.create()
                     .strength(3f)
-                    .requiresTool()));
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.AMETHYST_BLOCK)));
 
     public static final Block PINK_GARNET_ORE = registerBlock("pink_garnet_ore",
             new ExperienceDroppingBlock(UniformIntProvider.create(2, 5),
                     AbstractBlock.Settings.create()
                             .strength(3f)
-                            .requiresTool()));
+                            .requiresTool()
+                            .sounds(BlockSoundGroup.AMETHYST_BLOCK)));
     public static final Block PINK_GARNET_DEEPSLATE_ORE = registerBlock("pink_garnet_deepslate_ore",
             new ExperienceDroppingBlock(UniformIntProvider.create(3, 6),
                     AbstractBlock.Settings.create()
@@ -46,50 +51,93 @@ public class ModBlocks {
     public static final Block PINK_GARNET_STAIRS = registerBlock("pink_garnet_stairs",
             new StairsBlock(ModBlocks.PINK_GARNET_BLOCK.getDefaultState(),AbstractBlock.Settings.create()
                     .strength(2f)
-                    .requiresTool()));
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.AMETHYST_BLOCK)));
     public static final Block PINK_GARNET_SLAB = registerBlock("pink_garnet_slab",
             new SlabBlock(AbstractBlock.Settings.create()
                     .strength(2f)
-                    .requiresTool()));
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.AMETHYST_BLOCK)));
 
     public static final Block PINK_GARNET_BUTTON = registerBlock("pink_garnet_button",
             new ButtonBlock(BlockSetType.IRON, 2, AbstractBlock.Settings.create()
                     .strength(2f)
                     .requiresTool()
-                    .noCollision()));
+                    .noCollision()
+                    .sounds(BlockSoundGroup.AMETHYST_BLOCK)));
     public static final Block PINK_GARNET_PRESSURE_PLATE = registerBlock("pink_garnet_pressure_plate",
             new PressurePlateBlock(BlockSetType.IRON,AbstractBlock.Settings.create()
                     .strength(2f)
-                    .requiresTool()));
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.AMETHYST_BLOCK)));
 
     public static final Block PINK_GARNET_FENCE = registerBlock("pink_garnet_fence",
             new FenceBlock(AbstractBlock.Settings.create()
                     .strength(2f)
-                    .requiresTool()));
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.AMETHYST_BLOCK)));
     public static final Block PINK_GARNET_FENCE_GATE = registerBlock("pink_garnet_fence_gate",
             new FenceGateBlock(WoodType.ACACIA,AbstractBlock.Settings.create()
                     .strength(2f)
-                    .requiresTool()));
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.AMETHYST_BLOCK)));
     public static final Block PINK_GARNET_WALL = registerBlock("pink_garnet_wall",
             new WallBlock(AbstractBlock.Settings.create()
                     .strength(2f)
-                    .requiresTool()));
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.AMETHYST_BLOCK)));
     public static final Block PINK_GARNET_DOOR = registerBlock("pink_garnet_door",
             new DoorBlock(BlockSetType.IRON, AbstractBlock.Settings.create()
                     .strength(2f)
                     .requiresTool()
-                    .nonOpaque()));
-    public static final Block PINK_GARNET_TRAPDOOR= registerBlock("pink_garnet_trapdoor",
+                    .nonOpaque()
+                    .sounds(BlockSoundGroup.AMETHYST_BLOCK)));
+    public static final Block PINK_GARNET_TRAPDOOR = registerBlock("pink_garnet_trapdoor",
             new TrapdoorBlock(BlockSetType.IRON, AbstractBlock.Settings.create()
                     .strength(2f)
                     .requiresTool()
-                    .nonOpaque()));
+                    .nonOpaque()
+                    .sounds(BlockSoundGroup.AMETHYST_BLOCK)));
 
     public static final Block PINK_GARNET_LAMP = registerBlock("pink_garnet_lamp",
             new PinkGarnetLampBlock(AbstractBlock.Settings.create()
                     .strength(1f)
-                    .requires()
-                    .luminance(state -> state.get(PinkGarnetLampBlock.CLICKED) ? 15 : 0)));
+                    .requiresTool()
+                    .luminance(state -> state.get(PinkGarnetLampBlock.CLICKED) ? 15 : 0)
+                    .sounds(BlockSoundGroup.AMETHYST_BLOCK)));
+
+    public static final Block STEEL_BLOCK = registerBlock("steel_block",
+            new Block(AbstractBlock.Settings.create()
+                    .strength(4f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.NETHERITE)));
+    public static final Block STEEL_STAIRS = registerBlock("steel_stairs",
+            new StairsBlock(ModBlocks.STEEL_BLOCK.getDefaultState(), AbstractBlock.Settings.create()
+                    .strength(4f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.NETHERITE)));
+    public static final Block STEEL_SLAB = registerBlock("steel_slab",
+            new SlabBlock(AbstractBlock.Settings.create()
+                    .strength(4f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.NETHERITE)));
+    public static final Block STEEL_WALL = registerBlock("steel_wall",
+            new WallBlock(AbstractBlock.Settings.create()
+                    .strength(4f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.NETHERITE)));
+    //for some reason it's impossible to add sounds to doors without also making a new blockSoundGroup.
+    public static final Block STEEL_DOOR = registerBlock("steel_door",
+            new DoorBlock(BlockSetType.IRON, AbstractBlock.Settings.create()
+                    .strength(4f)
+                    .requiresTool()
+                    .nonOpaque()));
+    public static final Block STEEL_TRAPDOOR = registerBlock("steel_trapdoor",
+            new TrapdoorBlock(BlockSetType.IRON, AbstractBlock.Settings.create()
+                    .strength(4f)
+                    .requiresTool()
+                    .nonOpaque()));
+
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
@@ -109,6 +157,8 @@ public class ModBlocks {
             entries.add(ModBlocks.RAW_PINK_GARNET_BLOCK);
             entries.add(ModBlocks.PINK_GARNET_ORE);
             entries.add(ModBlocks.PINK_GARNET_DEEPSLATE_ORE);
+
+            entries.add(ModBlocks.STEEL_BLOCK);
 
             entries.add(ModBlocks.MAGIC_BLOCK);
         });

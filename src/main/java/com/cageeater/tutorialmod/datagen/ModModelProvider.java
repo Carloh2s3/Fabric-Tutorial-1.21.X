@@ -28,7 +28,6 @@ public class ModModelProvider extends FabricModelProvider {
         pinkGarnetPool.button(ModBlocks.PINK_GARNET_BUTTON);
         pinkGarnetPool.pressurePlate(ModBlocks.PINK_GARNET_PRESSURE_PLATE);
         pinkGarnetPool.wall(ModBlocks.PINK_GARNET_WALL);
-
         blockStateModelGenerator.registerDoor(ModBlocks.PINK_GARNET_DOOR);
         blockStateModelGenerator.registerTrapdoor(ModBlocks.PINK_GARNET_TRAPDOOR);
 
@@ -36,6 +35,13 @@ public class ModModelProvider extends FabricModelProvider {
         Identifier lampOnIdentifier = blockStateModelGenerator.createSubModel(ModBlocks.PINK_GARNET_LAMP, "_on", Models.CUBE_ALL, TextureMap::all);
         blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.PINK_GARNET_LAMP)
                 .coordinate(BlockStateModelGenerator.createBooleanModelMap(PinkGarnetLampBlock.CLICKED, lampOnIdentifier, lampOffIdentifier)));
+
+        BlockStateModelGenerator.BlockTexturePool steelBlockPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.STEEL_BLOCK);
+        steelBlockPool.stairs(ModBlocks.STEEL_STAIRS);
+        steelBlockPool.slab(ModBlocks.STEEL_SLAB);
+        steelBlockPool.wall(ModBlocks.STEEL_WALL);
+        blockStateModelGenerator.registerDoor(ModBlocks.STEEL_DOOR);
+        blockStateModelGenerator.registerTrapdoor(ModBlocks.STEEL_TRAPDOOR);
     }
 
     @Override
@@ -45,5 +51,13 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.CAULIFLOWER, Models.GENERATED);
         itemModelGenerator.register(ModItems.CHISEL, Models.GENERATED);
         itemModelGenerator.register(ModItems.STARLIGHT_ASHES, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.PINK_GARNET_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PINK_GARNET_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PINK_GARNET_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PINK_GARNET_AXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PINK_GARNET_HOE, Models.HANDHELD);
+
+
     }
 }

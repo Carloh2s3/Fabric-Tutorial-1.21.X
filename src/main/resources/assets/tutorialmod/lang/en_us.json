@@ -5,6 +5,13 @@
   "item.tutorialmod.cauliflower": "Cauliflower",
   "item.tutorialmod.starlight_ashes": "Starlight Ashes",
 
+  "item.tutorialmod.pink_garnet_sword": "Pink Garnet Sword",
+  "item.tutorialmod.pink_garnet_pickaxe": "Pink Garnet Pickaxe",
+  "item.tutorialmod.pink_garnet_shovel": "Pink Garnet Shovel",
+  "item.tutorialmod.pink_garnet_axe": "Pink Garnet Axe",
+  "item.tutorialmod.pink_garnet_hoe": "Pink Garnet Hoe",
+
+
   "block.tutorialmod.pink_garnet_block": "Block of Pink Garnet",
   "block.tutorialmod.raw_pink_garnet_block": "Block of Raw Pink Garnet",
   "block.tutorialmod.magic_block": "Magic Block",
@@ -23,6 +30,13 @@
 
   "block.tutorialmod.pink_garnet_ore": "Pink Garnet Ore",
   "block.tutorialmod.pink_garnet_deepslate_ore": "Pink Garnet Deepslate Ore",
+
+  "block.tutorialmod.steel_block": "Block of Steel",
+  "block.tutorialmod.steel_stairs": "Steel Stairs",
+  "block.tutorialmod.steel_slab": "Steel Slab",
+  "block.tutorialmod.steel_wall": "Steel Wall",
+  "block.tutorialmod.steel_door": "Steel Door",
+  "block.tutorialmod.steel_trapdoor": "Steel Trapdoor",
 
   "itemgroup.tutorialmod.pink_garnet_items": "Pink Garnet Items",
   "itemgroup.tutorialmod.pink_garnet_blocks": "Pink Garnet Blocks",
