@@ -36,7 +36,6 @@ public class ModItemGroups {
                         entries.add(ModItems.PINK_GARNET_CHESTPLATE);
                         entries.add(ModItems.PINK_GARNET_LEGGINGS);
                         entries.add(ModItems.PINK_GARNET_BOOTS);
-
                     })
                     .build());
 
@@ -63,6 +62,22 @@ public class ModItemGroups {
                         entries.add(ModBlocks.PINK_GARNET_PRESSURE_PLATE);
 
                         entries.add(ModBlocks.PINK_GARNET_LAMP);
+                    })
+                    .build());
+
+    public static final ItemGroup STEEL_GROUP = Registry.register(Registries.ITEM_GROUP,
+            Identifier.of(KaupenjoeTutorial.MOD_ID, "steel_group"),
+            FabricItemGroup.builder()
+                    .icon(() -> new ItemStack(ModItems.STEEL_BLEND))
+                    .displayName(Text.translatable("itemgroup.tutorialmod.steel_group"))
+                    .entries((displayContext, entries) -> {
+                        entries.add(ModItems.STEEL_INGOT);
+                        entries.add(ModItems.STEEL_BLEND);
+
+                        entries.add(ModItems.STEEL_HELMET);
+                        entries.add(ModItems.STEEL_CHESTPLATE);
+                        entries.add(ModItems.STEEL_LEGGINGS);
+                        entries.add(ModItems.STEEL_BOOTS);
 
                         entries.add(ModBlocks.STEEL_BLOCK);
                         entries.add(ModBlocks.STEEL_STAIRS);
@@ -70,8 +85,13 @@ public class ModItemGroups {
                         entries.add(ModBlocks.STEEL_WALL);
                         entries.add(ModBlocks.STEEL_DOOR);
                         entries.add(ModBlocks.STEEL_TRAPDOOR);
-                    })
-                    .build());
+
+                        entries.add(ModItems.STEEL_SWORD);
+                        entries.add(ModItems.STEEL_SHOVEL);
+                        entries.add(ModItems.STEEL_PICKAXE);
+                        entries.add(ModItems.STEEL_AXE);
+                        entries.add(ModItems.STEEL_HOE);
+                    }).build());
 
     public static void registerItemGroups() {
         KaupenjoeTutorial.LOGGER.info("Registering Item Groups for " + KaupenjoeTutorial.MOD_ID);

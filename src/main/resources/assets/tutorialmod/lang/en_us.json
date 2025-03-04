@@ -45,8 +45,23 @@
   "block.tutorialmod.steel_door": "Steel Door",
   "block.tutorialmod.steel_trapdoor": "Steel Trapdoor",
 
+  "item.tutorialmod.steel_sword": "Steel Sword",
+  "item.tutorialmod.steel_shovel": "Steel Shovel",
+  "item.tutorialmod.steel_pickaxe": "Steel Pickaxe",
+  "item.tutorialmod.steel_axe": "Steel Axe",
+  "item.tutorialmod.steel_hoe": "Steel Hoe",
+
+  "item.tutorialmod.steel_helmet": "Steel Helmet",
+  "item.tutorialmod.steel_chestplate": "Steel Chestplate",
+  "item.tutorialmod.steel_leggings": "Steel Leggings",
+  "item.tutorialmod.steel_boots": "Steel Boots",
+
+  "item.tutorialmod.steel_ingot": "Steel Ingot",
+  "item.tutorialmod.steel_blend": "Steel Blend",
+
   "itemgroup.tutorialmod.pink_garnet_items": "Pink Garnet Items",
   "itemgroup.tutorialmod.pink_garnet_blocks": "Pink Garnet Blocks",
+  "itemgroup.tutorialmod.steel_group": "Steel Stuff",
 
   "tooltip.tutorialmod.magic_block": "This block is very §9MAGICAL§r!",
   "tooltip.tutorialmod.chisel": "Press §eShift§r for more information.",

@@ -16,7 +16,14 @@ public enum ModToolMaterials implements ToolMaterial {
             5.0F,
             4.0F,
             22,
-            () -> Ingredient.ofItems(ModItems.PINK_GARNET));
+            () -> Ingredient.ofItems(ModItems.PINK_GARNET)),
+
+    STEEL(ModTags.Blocks.INCORRECT_FOR_STEEL_TOOL,
+            712,
+            7F,
+            2.5F,
+            12,
+            () -> Ingredient.ofItems(ModItems.STEEL_INGOT));
 
     private final TagKey<Block> inverseTag;
     private final int itemDurability;
