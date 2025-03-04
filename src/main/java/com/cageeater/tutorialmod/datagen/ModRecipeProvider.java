@@ -199,9 +199,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 break;
             default:
                 recipe
-                        .pattern("   ")
-                        .pattern("ABA")
-                        .pattern("   ");
+                        .pattern(" A ")
+                        .pattern("A A")
+                        .pattern(" A ");
                 break;
         }
         return recipe;

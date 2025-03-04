@@ -71,8 +71,8 @@ public class ModItems {
     public static final Item STEEL_INGOT = registerItem("steel_ingot", new Item(new Item.Settings()));
     public static final Item STEEL_BLEND = registerItem("steel_blend", new Item(new Item.Settings()));
 
-    public static final Item STEEL_HELMET = registerItem("steel_helmet",
-            new ModArmorItem(ModArmorMaterials.STEEL_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Settings()
+    public static final Item STEEL_HELMET = registerItem("steel_helmet", new ModArmorItem(
+            ModArmorMaterials.STEEL_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Settings()
                     .maxDamage(ArmorItem.Type.HELMET.getMaxDamage(25))));
     public static final Item STEEL_CHESTPLATE = registerItem("steel_chestplate",
             new ModArmorItem(ModArmorMaterials.STEEL_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, new Item.Settings()
@@ -84,20 +84,15 @@ public class ModItems {
             new ModArmorItem(ModArmorMaterials.STEEL_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, new Item.Settings()
                     .maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(25))));
 
-    public static final Item STEEL_SWORD = registerItem("steel_sword",
-            new SwordItem(ModToolMaterials.STEEL, new Item.Settings()
+    public static final Item STEEL_SWORD = registerItem("steel_sword", new SwordItem(ModToolMaterials.STEEL, new Item.Settings()
                     .attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.STEEL, 3,-2.4f))));
-    public static final Item STEEL_PICKAXE = registerItem("steel_pickaxe",
-            new PickaxeItem(ModToolMaterials.STEEL, new Item.Settings()
+    public static final Item STEEL_PICKAXE = registerItem("steel_pickaxe", new PickaxeItem(ModToolMaterials.STEEL, new Item.Settings()
                     .attributeModifiers(PickaxeItem.createAttributeModifiers(ModToolMaterials.STEEL, 1F,-2.8f))));
-    public static final Item STEEL_SHOVEL = registerItem("steel_shovel",
-            new ShovelItem(ModToolMaterials.STEEL, new Item.Settings()
+    public static final Item STEEL_SHOVEL = registerItem("steel_shovel", new ShovelItem(ModToolMaterials.STEEL, new Item.Settings()
                     .attributeModifiers(ShovelItem.createAttributeModifiers(ModToolMaterials.STEEL, 1.5f,-3f))));
-    public static final Item STEEL_AXE = registerItem("steel_axe",
-            new AxeItem(ModToolMaterials.STEEL, new Item.Settings()
+    public static final Item STEEL_AXE = registerItem("steel_axe", new AxeItem(ModToolMaterials.STEEL, new Item.Settings()
                     .attributeModifiers(AxeItem.createAttributeModifiers(ModToolMaterials.STEEL, 6F,-3.2f))));
-    public static final Item STEEL_HOE = registerItem("steel_hoe",
-            new HoeItem(ModToolMaterials.STEEL, new Item.Settings()
+    public static final Item STEEL_HOE = registerItem("steel_hoe", new HoeItem(ModToolMaterials.STEEL, new Item.Settings()
                     .attributeModifiers(HoeItem.createAttributeModifiers(ModToolMaterials.STEEL, -2f,-1f))));
 
     private static Item registerItem(String name, Item item) {
