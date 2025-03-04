@@ -5,6 +5,7 @@ import com.cageeater.tutorialmod.block.ModBlocks;
 import com.cageeater.tutorialmod.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.block.Block;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
@@ -68,8 +69,26 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerReversibleCompactingRecipes(recipeExporter, RecipeCategory.BUILDING_BLOCKS,
                 ModItems.PINK_GARNET, RecipeCategory.DECORATIONS, ModBlocks.PINK_GARNET_BLOCK);
 
+        createAndOfferBlockSetRecipes(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.PINK_GARNET_BLOCK,
+                ModBlocks.PINK_GARNET_STAIRS,
+                ModBlocks.PINK_GARNET_SLAB,
+                ModBlocks.PINK_GARNET_WALL);
+        createAndOfferExtraBlockRecipes(recipeExporter, RecipeCategory.REDSTONE, ModItems.PINK_GARNET,
+                ModBlocks.PINK_GARNET_DOOR,
+                ModBlocks.PINK_GARNET_TRAPDOOR,
+                ModBlocks.PINK_GARNET_PRESSURE_PLATE,
+                ModBlocks.PINK_GARNET_BUTTON);
+
         offerReversibleCompactingRecipes(recipeExporter, RecipeCategory.BUILDING_BLOCKS,
                 ModItems.STEEL_INGOT, RecipeCategory.DECORATIONS, ModBlocks.STEEL_BLOCK);
+
+        createAndOfferBlockSetRecipes(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.STEEL_BLOCK,
+                ModBlocks.STEEL_STAIRS,
+                ModBlocks.STEEL_SLAB,
+                ModBlocks.STEEL_WALL);
+        createAndOfferExtraBlockRecipes(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModItems.STEEL_INGOT,
+                ModBlocks.STEEL_DOOR,
+                ModBlocks.STEEL_TRAPDOOR);
 
         //pink garnet items
         createToolRecipe("sword", RecipeCategory.COMBAT, ModItems.PINK_GARNET_SWORD, ModItems.PINK_GARNET, Items.STICK).offerTo(recipeExporter);
@@ -186,5 +205,67 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 break;
         }
         return recipe;
+    }
+
+    private void createAndOfferBlockSetRecipes(RecipeExporter exporter, RecipeCategory category, Block material, Block stairs, Block slab) {
+        ShapedRecipeJsonBuilder.create(category, stairs, 4)
+                .pattern("A  ")
+                .pattern("AA ")
+                .pattern("AAA")
+                .input('A', material)
+                .criterion(hasItem(material), conditionsFromItem(material))
+                .offerTo(exporter);
+        offerSlabRecipe(exporter, category, slab, material);
+    }
+    private void createAndOfferBlockSetRecipes(RecipeExporter exporter, RecipeCategory category, Block material, Block stairs, Block slab, Block wall) {
+        createAndOfferBlockSetRecipes(exporter,category, material, stairs, slab);
+        offerWallRecipe(exporter, category, wall, material);
+    }
+    private void createAndOfferBlockSetRecipes(RecipeExporter exporter, RecipeCategory category, Block material, Block stairs, Block slab, Block wall, Block door, Block trapdoor) {
+        createAndOfferBlockSetRecipes(exporter,category, material, stairs, slab, wall);
+        ShapedRecipeJsonBuilder.create(category, door, 3)
+                .pattern("AA ")
+                .pattern("AA ")
+                .pattern("AA ")
+                .input('A', material)
+                .criterion(hasItem(material), conditionsFromItem(material))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(category, trapdoor, 2)
+                .pattern("AA ")
+                .pattern("AA ")
+                .input('A', material)
+                .criterion(hasItem(material), conditionsFromItem(material))
+                .offerTo(exporter);
+    }
+    private void createAndOfferBlockSetRecipes(RecipeExporter exporter, RecipeCategory category, Block material, Block stairs, Block slab, Block wall, Block door, Block trapdoor, Block pressureplate) {
+        createAndOfferBlockSetRecipes(exporter,category, material, stairs, slab, wall, door, trapdoor);
+        offerPressurePlateRecipe(exporter, pressureplate, material);
+    }
+
+    private void createAndOfferExtraBlockRecipes(RecipeExporter exporter, RecipeCategory category, Item material, Block door, Block trapdoor) {
+        ShapedRecipeJsonBuilder.create(category, door)
+                .pattern("AA ")
+                .pattern("AA ")
+                .pattern("AA ")
+                .input('A', material)
+                .criterion(hasItem(material), conditionsFromItem(material))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(category, trapdoor)
+                .pattern("AA ")
+                .pattern("AA ")
+                .input('A', material)
+                .criterion(hasItem(material), conditionsFromItem(material))
+                .offerTo(exporter);
+    }
+    private void createAndOfferExtraBlockRecipes(RecipeExporter exporter, RecipeCategory category, Item material, Block door, Block trapdoor, Block pressureplate) {
+        createAndOfferExtraBlockRecipes(exporter, category, material, door, trapdoor);
+        offerPressurePlateRecipe(exporter, pressureplate, material);
+    }
+    private void createAndOfferExtraBlockRecipes(RecipeExporter exporter, RecipeCategory category, Item material, Block door, Block trapdoor, Block pressureplate, Block button) {
+        createAndOfferExtraBlockRecipes(exporter, category, material, door, trapdoor, pressureplate);
+        ShapelessRecipeJsonBuilder.create(category, button)
+                .input(material)
+                .criterion(hasItem(material), conditionsFromItem(material))
+                .offerTo(exporter);
     }
 }
