@@ -10,6 +10,7 @@ import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.resource.featuretoggle.FeatureFlags;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
@@ -94,6 +95,13 @@ public class ModItems {
                     .attributeModifiers(AxeItem.createAttributeModifiers(ModToolMaterials.STEEL, 6F,-3.2f))));
     public static final Item STEEL_HOE = registerItem("steel_hoe", new HoeItem(ModToolMaterials.STEEL, new Item.Settings()
                     .attributeModifiers(HoeItem.createAttributeModifiers(ModToolMaterials.STEEL, -2f,-1f))));
+
+    public static final Item PINK_GARNET_HORSE_ARMOR = registerItem("pink_garnet_horse_armor",
+            new AnimalArmorItem(ModArmorMaterials.PINK_GARNET_ARMOR_MATERIAL, AnimalArmorItem.Type.EQUESTRIAN,
+                    false, new Item.Settings().maxCount(1)));
+
+    public static final Item KAUPEN_SMITHING_TEMPLATE = registerItem("kaupen_armor_trim_smithing_template",
+            SmithingTemplateItem.of(Identifier.of(KaupenjoeTutorial.MOD_ID, "kaupen"), FeatureFlags.VANILLA));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(KaupenjoeTutorial.MOD_ID, name), item);

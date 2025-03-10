@@ -122,6 +122,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         createArmorRecipe("chestplate", RecipeCategory.COMBAT, ModItems.STEEL_CHESTPLATE, ModItems.STEEL_INGOT).offerTo(recipeExporter);
         createArmorRecipe("leggings", RecipeCategory.COMBAT, ModItems.STEEL_LEGGINGS, ModItems.STEEL_INGOT).offerTo(recipeExporter);
         createArmorRecipe("boots", RecipeCategory.COMBAT, ModItems.STEEL_BOOTS, ModItems.STEEL_INGOT).offerTo(recipeExporter);
+
+        //trims
+        offerSmithingTrimRecipe(recipeExporter, ModItems.KAUPEN_SMITHING_TEMPLATE, Identifier.of(KaupenjoeTutorial.MOD_ID,"kaupen"));
     }
 
     private ShapedRecipeJsonBuilder createToolRecipe(String toolType, RecipeCategory category, Item result, Item material, Item stick) {

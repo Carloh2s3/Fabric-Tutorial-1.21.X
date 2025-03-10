@@ -18,6 +18,8 @@
   "item.tutorialmod.pink_garnet_leggings": "Pink Garnet Leggings",
   "item.tutorialmod.pink_garnet_boots": "Pink Garnet Boots",
 
+  "item.tutorialmod.pink_garnet_horse_armor": "Pink Garnet Horse Armor",
+
 
   "block.tutorialmod.pink_garnet_block": "Block of Pink Garnet",
   "block.tutorialmod.raw_pink_garnet_block": "Block of Raw Pink Garnet",
@@ -66,5 +68,8 @@
   "tooltip.tutorialmod.magic_block": "This block is very §9MAGICAL§r!",
   "tooltip.tutorialmod.chisel": "Press §eShift§r for more information.",
   "tooltip.tutorialmod.chisel_shift": "This item chisels blocks into more elaborate variants.",
-  "tooltip.tutorialmod.cauliflower": "Yum, raw and earthy."
+  "tooltip.tutorialmod.cauliflower": "Yum, raw and earthy.",
+
+  "trim_material.tutorialmod.pink_garnet": "Pink Garnet Material",
+  "item.tutorialmod.kaupen_armor_trim_smithing_template": "Kaupen Armor Pattern"
 }
