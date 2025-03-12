@@ -1,6 +1,7 @@
 package com.cageeater.tutorialmod;
 
 import com.cageeater.tutorialmod.block.ModBlocks;
+import com.cageeater.tutorialmod.util.ModModelPredicates;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.client.render.RenderLayer;
@@ -13,5 +14,7 @@ public class KaupenjoeTutorialClient implements ClientModInitializer {
 
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.STEEL_DOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.STEEL_TRAPDOOR, RenderLayer.getCutout());
+
+        ModModelPredicates.registerModelPredicates();
     }
 }
